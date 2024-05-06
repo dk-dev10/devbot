@@ -13,14 +13,17 @@
     <main class="main">
       <div class="container">
         <header class="header">
-          <img src="./assets/logo/logo.svg" alt="" />
-          <nav class="nav">
-            <a href="#">Преимущества</a>
-            <a href="#">Как это работает</a>
-            <a href="#">Тарифы</a>
-            <a href="#">Для ветеринаров</a>
-          </nav>
-          <button class="btn">Установить чат-бот</button>
+          <img src="./assets/logo/logo.svg" alt="" class="header__logo" />
+          <div class="modal__nav">
+            <nav class="nav">
+              <a href="#">Преимущества</a>
+              <a href="#">Как это работает</a>
+              <a href="#">Тарифы</a>
+              <a href="#">Для ветеринаров</a>
+            </nav>
+            <button class="btn">Установить чат-бот</button>
+          </div>
+          <button class="modal__nav-btn"></button>
         </header>
         <div class="main__content">
           <div class="chat__block">
@@ -28,21 +31,214 @@
             <span>для ваших животных</span>
           </div>
           <p class="main__text">Ветеринары со всей территории России</p>
-          <button class="btn">Задать вопрос ветеринару</button>
+          <button class="btn">Задать вопрос <span>ветеринару</span></button>
         </div>
         <img src="/assets/sheep.png" alt="sheep" class="main_sheep" />
         <img src="/assets/cloud2.svg" alt="cloud & 2 birds" class="two_birds" />
         <img src="/assets/cloud1.svg" alt="cloud & bird" class="one_bird" />
       </div>
     </main>
-    
-    <div class="slider">
-      <ul>
-        <li class="">
-          
-        </li>
-      </ul>
-    </div>
 
+    <section class="slider__container" >
+      <div class="slider container">
+        <ul class="slider__list">
+          <li class="slider__item">
+            <div class="slider__item-img">
+              <img src="/assets/icons/chat.svg" alt="" />
+            </div>
+            <h3>оказание помощи</h3>
+            <p>сельскохозяйственным животным</p>
+          </li>
+          <li class="slider__item">
+            <div class="slider__item-img">
+              <img src="/assets/icons/goal.svg" alt="" />
+            </div>
+            <h3>Качественная консультация</h3>
+            <p>круглосуточно, в чат-боте 24/7</p>
+          </li>
+          <li class="slider__item">
+            <div class="slider__item-img">
+              <img src="/assets/icons/metka.svg" alt="" />
+            </div>
+            <h3>Лучшие ветеринары</h3>
+            <p>со всей территории страны</p>
+          </li>
+          <li class="slider__item">
+            <div class="slider__item-img">
+              <img src="/assets/icons/mobile.svg" alt="" />
+            </div>
+            <h3>Удобный сервис</h3>
+            <p>для крупных и малых фермерских хозяйств</p>
+          </li>
+        </ul>
+        <div class="slider-nav">
+          <div class="slider-prev">&lt;</div>
+          <div class="slider-index"></div>
+          <div class="slider-next">&gt;</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="personal">
+        <div class="personal__left">
+          <div class="personal__img">
+            <div class="personal__img-cloud1">
+              <img src="/assets/cloud_blue_2.svg" alt="" />
+            </div>
+            <div class="personal__img-inner">
+              <img src="/assets/chicken.jpg" alt="курицы в поле" />
+            </div>
+          </div>
+          <div class="personal__img">
+            <div class="personal__img-cloud2">
+              <img src="/assets/cloud_blue_1.svg" alt="" />
+            </div>
+            <div class="personal__img-inner">
+              <img src="/assets/goat.jpg" alt="2 козла" />
+            </div>
+          </div>
+        </div>
+        <div class="personal__right">
+          <h2>
+            Личный ветеринар
+            <span
+              ><br />
+              в Телеграме</span
+            >
+          </h2>
+          <p>
+            Оказание помощи домашним питомцам на сегодняшний день не является
+            проблемой для их владельцев, кошку или собаку можно спокойно отвезти
+            к ветеринару в клинику, особенно в городе. <br />
+            <br />
+            На селе дела обстоят немного по другому, корову или овцу не посадишь
+            в машину — таким животным надо вызывать ветеринара на место. В
+            крупных хозяйствах обычно в штате имеется свой ветеринар, а что
+            делать мелким фермерам и подворьям? <br />
+            <br />
+            Вызвав ветеринара, владелец может рассчитывать, что специалист
+            сможет приехать к больному животному сразу, поскольку он может быть
+            загружен или находиться в отдалённости, тем самым упуская время для
+            лечения.
+          </p>
+
+          <div class="personal__right-text">
+            <span>
+              Cервис позволяет владельцам получать ветеринарную помощь 24/7, на
+              территории России
+            </span>
+            <p>
+              Достаточно только быть пользователем Telegram. Внутри необходимо
+              запустить чат-бот и описать проблему.
+            </p>
+            <p>
+              Ветеринары, которые тоже используют наш бот откликаются на вашу
+              заявку и дистанционно могут поставить диагноз, основываясь на
+              симптомах, описанных выше в боте. Назначают лечение и тем самым
+              берегут драгоценное время, ускоряя лечение.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="howtoworking">
+      <div class="container">
+        <div class="howtoworking__wrapper">
+          <div class="howtoworking__list">
+            <div class="chat__block">
+              <h2>Как это <span>работает</span></h2>
+            </div>
+            <ul class="howtoworking__list-wrapper">
+              <li>
+                <h3>Вопрос от животновода</h3>
+                <p>
+                  Животновод подключается к боту в Телеграм и описывает
+                  ветеринару проблему с животным.
+                </p>
+              </li>
+              <li>
+                <h3>Вопрос от животновода</h3>
+                <p>
+                  Животновод подключается к боту в Телеграм и описывает
+                  ветеринару проблему с животным.
+                </p>
+              </li>
+              <li>
+                <h3>Вопрос от животновода</h3>
+                <p>
+                  Животновод подключается к боту в Телеграм и описывает
+                  ветеринару проблему с животным.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="howtoworking__phone">
+            <div class="howtoworking__phone-block">
+              <img src="/assets/iphone13.png" alt="iphone13" />
+              <button class="btn">Задать вопрос</button>
+            </div>
+            <img src="/assets/cow.png" alt="корова" class="howtoworking__cow" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hourse">
+      <img src="/assets/cloud_blue_1.svg" alt="" class="hourse__cloud1" />
+      <img src="/assets/cloud_blue_2.svg" alt="" class="hourse__cloud2" />
+      <img
+        src="/assets/cloud_blue_2.svg"
+        alt=""
+        class="hourse__cloud-reverse"
+      />
+      <img src="/assets/hourse.png" alt="конь" class="hourse__img" />
+      <div class="container">
+        <div class="hourse__chat">
+          <div class="chat__block chat__block-blue">
+            Абонентское обслуживание — <br />
+            <span>365 дней</span> бесплатно
+          </div>
+          <button class="btn">Установить чат-бот</button>
+        </div>
+      </div>
+    </section>
+    <section class="clouds">
+      <img src="/assets/cloud_blue_2.svg" alt="" class="clouds__l2" />
+      <img src="/assets/cloud_blue_1.svg" alt="" class="clouds__l1" />
+      <img src="/assets/cloud_blue_1.svg" alt="" class="clouds__r1" />
+      <img src="/assets/cloud_blue_2.svg" alt="" class="clouds__r2" />
+
+      <h1>Для ветеринаров</h1>
+      <h3>
+        Приглашаем <br class="mobile" />
+        ветеринаров <br />
+        к сотрудничеству
+      </h3>
+      <button class="btn">узнать информацию</button>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer__wrapper">
+          <header class="header">
+            <img src="./assets/logo/logo.svg" alt="" />
+            <nav class="nav">
+              <a href="#">Преимущества</a>
+              <a href="#">Как это работает</a>
+              <a href="#">Тарифы</a>
+              <a href="#">Для ветеринаров</a>
+            </nav>
+            <button class="btn">Установить чат-бот</button>
+          </header>
+          <p>© 2024. Дистанционный ветеринар <span>Credit by WEBBOT</span></p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="bg__linear"></div>
+
+    <script src="main.js"></script>
   </body>
 </html>
