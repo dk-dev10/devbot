@@ -39,7 +39,7 @@
       </div>
     </main>
 
-    <section class="slider__container" >
+    <section class="slider__container">
       <div class="slider container">
         <ul class="slider__list">
           <li class="slider__item">
@@ -72,9 +72,17 @@
           </li>
         </ul>
         <div class="slider-nav">
-          <div class="slider-prev">&lt;</div>
-          <div class="slider-index"></div>
-          <div class="slider-next">&gt;</div>
+          <button class="slider-prev">
+            <img src="/assets/icons/prev.svg" alt="" />
+          </button>
+          <div class="slider-index">
+            <span class="activeIndex"></span>
+            |
+            <span class="countLength"></span>
+          </div>
+          <button class="slider-next">
+            <img src="/assets/icons/next.svg" alt="" />
+          </button>
         </div>
       </div>
     </section>
@@ -223,7 +231,7 @@
       <div class="container">
         <div class="footer__wrapper">
           <header class="header">
-            <img src="./assets/logo/logo.svg" alt="" />
+            <img src="./assets/logo/logo.svg" alt="" class="header__logo" />
             <nav class="nav">
               <a href="#">Преимущества</a>
               <a href="#">Как это работает</a>

@@ -1,62 +1,51 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const slider = document.querySelector('.slider__list');
-  const slides = document.querySelectorAll('.slider__item');
-  const prevBtn = document.querySelector('.slider-prev');
-  const nextBtn = document.querySelector('.slider-next');
-  const indexDisplay = document.querySelector('.slider-index');
-  let currentIndex = 0;
+const container = document.querySelector('.slider__list');
+const prev = document.querySelector('.slider-prev');
+const next = document.querySelector('.slider-next');
 
-  function goToSlide(index) {
-    const windowsWidt = window.innerWidth;
-    slider.style.transform = `translateX(-${index * (windowsWidt - 15)}px)`;
-    currentIndex = index;
-    updateIndex();
-  }
+const activeIndex = document.querySelector('.activeIndex');
+const countLength = document.querySelector('.countLength');
 
-  const div = document.createElement('div');
-  const span = document.createElement('span');
-  const span2 = document.createElement('span');
-  span.classList.add('accent');
-  function updateIndex() {
-    // span.textContent = currentIndex + 1;
-    // span2.textContent = slides.length;
-    // div.appendChild(span);
-    indexDisplay.innerHTML = `<span class='accentSlider' >${currentIndex + 1}</span> | ${
-      slides.length
-    }`;
-  }
+const items = document.querySelectorAll('.slider__item');
 
-  prevBtn.addEventListener('click', function () {
-    if (currentIndex > 0) {
-      goToSlide(currentIndex - 1);
-    } else {
-      goToSlide(slides.length - 1);
+countLength.textContent = items.length;
+
+let centerIndex = 1;
+
+function updateCenterElementIndex() {
+  const containerRect = container.getBoundingClientRect();
+  const containerCenterX = containerRect.left + containerRect.width / 2;
+
+  items.forEach((item, index) => {
+    const itemRect = item.getBoundingClientRect();
+    const itemCenterX = itemRect.left + itemRect.width / 2;
+
+    if (
+      itemCenterX >= containerCenterX &&
+      itemCenterX < containerCenterX + itemRect.width
+    ) {
+      centerIndex = index + 1;
+      activeIndex.textContent = centerIndex;
+      if (centerIndex === 1) {
+        prev.disabled = true;
+      } else if (centerIndex === items.length) {
+        next.disabled = true;
+      } else {
+        prev.disabled = false;
+        next.disabled = false;
+      }
+      return;
     }
   });
+}
+container.addEventListener('scroll', updateCenterElementIndex);
+updateCenterElementIndex();
 
-  nextBtn.addEventListener('click', function () {
-    if (currentIndex < slides.length - 1) {
-      goToSlide(currentIndex + 1);
-    } else {
-      goToSlide(0);
-    }
+function scrollSlider(count = 1) {
+  container.scrollBy({
+    left: items[0].offsetWidth * count,
+    behavior: 'smooth',
   });
+}
 
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  slider.addEventListener('touchstart', function (event) {
-    touchStartX = event.touches[0].clientX;
-  });
-
-  slider.addEventListener('touchend', function (event) {
-    touchEndX = event.changedTouches[0].clientX;
-    if (touchEndX < touchStartX) {
-      nextBtn.click();
-    } else if (touchEndX > touchStartX) {
-      prevBtn.click();
-    }
-  });
-
-  updateIndex();
-});
+next.addEventListener('click', () => scrollSlider());
+prev.addEventListener('click', () => scrollSlider(-1));
