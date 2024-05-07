@@ -49,3 +49,14 @@ function scrollSlider(count = 1) {
 
 next.addEventListener('click', () => scrollSlider());
 prev.addEventListener('click', () => scrollSlider(-1));
+
+const modalNav = document.querySelector('.modal__nav');
+const modalBtn = document.querySelector('.modal__nav-btn');
+
+modalBtn.addEventListener('click', () => {
+  modalNav.classList.toggle('open');
+  modalBtn.classList.toggle('open');
+  document.body.style.overflow = modalNav.classList.contains('open')
+    ? 'hidden'
+    : 'scroll';
+});
